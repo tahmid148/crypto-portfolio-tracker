@@ -1,11 +1,9 @@
 import xlwings as xw
 import pandas as pd
 from exchanges.mexc import initialise_mexc_spot, get_current_assets, get_open_trades
-import config
+from config import EXCEL_FILE_PATH
 
-file_path = 'CryptoPortfolio.xlsx'
-
-current_positions = pd.read_excel(file_path, skiprows=5, usecols="B:K")
+current_positions = pd.read_excel(EXCEL_FILE_PATH, skiprows=5, usecols="B:K")
 
 def fill_open_positions_table(trades):
     df = pd.DataFrame(trades)
@@ -25,9 +23,10 @@ def fill_open_positions_table(trades):
 
     print(current_positions)
 
-    wb = xw.Book(file_path)
+    wb = xw.Book(EXCEL_FILE_PATH)
     sheet = wb.sheets['CEX']
     sheet.range('B7').options(index=False, header=False).value = current_positions
+    wb.save()
 
 def main():
     mexc_client = initialise_mexc_spot()
