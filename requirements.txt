@@ -3,3 +3,4 @@ numpy
 openpyxl
 pandas
 xlwings
+libraries\mexc-sdk-1.0.0.tar.gz
