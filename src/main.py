@@ -3,7 +3,7 @@ import pandas as pd
 from exchanges.mexc import initialise_mexc_spot, get_current_assets, get_open_trades
 import config
 
-file_path = '../CryptoPortfolio.xlsx'
+file_path = 'CryptoPortfolio.xlsx'
 
 current_positions = pd.read_excel(file_path, skiprows=5, usecols="B:K")
 
