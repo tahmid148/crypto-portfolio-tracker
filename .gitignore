@@ -1,2 +1,4 @@
 src/config.py
 venv/
+src/exchanges/__pycache__/
+src/__pycache__/
