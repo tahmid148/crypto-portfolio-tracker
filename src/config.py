@@ -1,0 +1,3 @@
+
+MEXC_ACCESS_KEY = ""
+MEXC_SECRET_KEY = ""
